@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>경력 | 박동영</title>
+<title>박동영 | 이력</title>
 <meta name="description" content="태권도 시범 연출가 · 교육자 박동영의 경력, 연출, 연구, 수상 이력">
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
@@ -17,42 +17,56 @@
     --line:#2a2b2f; --accent:#7aa2ff; --accent-soft:#1c2540; --chip:#222327; }
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
+html{scroll-padding-top:72px}
 body{margin:0;background:var(--bg);color:var(--text);
   font-family:Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
   font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;word-break:keep-all}
 a{color:inherit}
 .wrap{max-width:760px;margin:0 auto;padding:0 20px}
 
-/* nav */
-nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);
+/* top bar */
+.bar{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);
   backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-top:10px;padding-bottom:10px}
-nav .wrap::-webkit-scrollbar{display:none}
-nav a{flex:none;text-decoration:none;font-size:14px;color:var(--muted);padding:6px 12px;border-radius:999px;transition:.15s}
-nav a:hover{color:var(--text);background:var(--chip)}
-nav a.active{color:var(--accent);background:var(--accent-soft);font-weight:600}
+.bar .wrap{display:flex;align-items:center;gap:16px;height:56px}
+.brand{flex:none;font-weight:700;text-decoration:none;letter-spacing:-.01em}
+.tabs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;margin-left:auto}
+.tabs::-webkit-scrollbar{display:none}
+.tabs a{flex:none;text-decoration:none;font-size:14px;color:var(--muted);padding:6px 12px;border-radius:999px;transition:.15s}
+.tabs a:hover{color:var(--text);background:var(--chip)}
+.tabs a.active{color:var(--accent);background:var(--accent-soft);font-weight:600}
 
-/* hero */
-header{padding:64px 0 40px}
+/* page header */
+.page-head{padding:56px 0 32px}
+.page-head h1{font-size:34px;line-height:1.2;margin:0;letter-spacing:-.02em}
+.page-head p{margin:12px 0 0;color:var(--muted);font-size:16px}
+.page-head .updated{font-size:13px;color:var(--faint);margin-top:10px}
+
+/* home hero */
 .hero{display:flex;gap:28px;align-items:center}
 .hero img{width:112px;height:112px;border-radius:50%;object-fit:cover;object-position:50% 18%;flex:none;border:1px solid var(--line)}
-h1{font-size:36px;line-height:1.2;margin:0 0 6px;letter-spacing:-.02em}
-h1 small{font-size:16px;font-weight:500;color:var(--faint);margin-left:8px;letter-spacing:0}
-.title{color:var(--muted);margin:0;font-size:15px}
+.hero h1 small{font-size:16px;font-weight:500;color:var(--faint);margin-left:8px;letter-spacing:0}
+.hero .title{color:var(--muted);margin:6px 0 0;font-size:15px}
 .intro{margin:28px 0 0;font-size:17px}
-.updated{margin:14px 0 0;font-size:13px;color:var(--faint)}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:32px}
 .stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px}
 .stat b{display:block;font-size:24px;letter-spacing:-.02em}
 .stat span{font-size:13px;color:var(--muted)}
 
-/* sections */
-section{padding:48px 0;border-top:1px solid var(--line)}
-section > h2{font-size:24px;margin:0 0 6px;letter-spacing:-.01em}
-section > p.lead{margin:0 0 28px;color:var(--muted);font-size:15px}
+/* category cards on home */
+.cats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cat{display:block;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;transition:.15s}
+.cat:hover{border-color:var(--accent);transform:translateY(-1px)}
+.cat .n{font-size:13px;color:var(--accent);font-weight:600}
+.cat h3{margin:4px 0 4px;font-size:18px}
+.cat p{margin:0;font-size:14px;color:var(--muted)}
+.cat .go{display:block;margin-top:12px;font-size:14px;color:var(--accent)}
 
-/* career entry (classygoody style) */
+/* sections */
+section{padding:40px 0;border-top:1px solid var(--line)}
+section > h2{font-size:22px;margin:0 0 6px;letter-spacing:-.01em}
+section > p.lead{margin:0 0 24px;color:var(--muted);font-size:15px}
+h2 .count{font-size:14px;color:var(--faint);font-weight:500;margin-left:6px}
+
 .entry{position:relative;padding:0 0 28px 22px;border-left:2px solid var(--line);margin-left:5px}
 .entry:last-child{padding-bottom:0}
 .entry::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;
@@ -64,7 +78,6 @@ section > p.lead{margin:0 0 28px;color:var(--muted);font-size:15px}
 .role{font-size:15px;color:var(--muted);margin:2px 0 0}
 .desc{margin:6px 0 0;font-size:15px}
 
-/* list rows */
 .rows{list-style:none;margin:0;padding:0}
 .rows li{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:13px 0;border-bottom:1px solid var(--line)}
 .rows li:last-child{border-bottom:0}
@@ -74,7 +87,6 @@ section > p.lead{margin:0 0 28px;color:var(--muted);font-size:15px}
 .badge{display:inline-block;font-size:12px;font-weight:600;padding:1px 8px;border-radius:6px;background:var(--chip);color:var(--muted);margin-right:6px;vertical-align:1px}
 .badge.gold{background:var(--accent-soft);color:var(--accent)}
 
-/* cards */
 .cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
 .card .t{font-weight:600}
@@ -82,118 +94,41 @@ section > p.lead{margin:0 0 28px;color:var(--muted);font-size:15px}
 .card .d{font-size:12px;color:var(--faint);margin-top:4px}
 .amt{font-variant-numeric:tabular-nums;color:var(--accent);font-weight:600;font-size:14px}
 
-details{margin-top:14px}
-summary{cursor:pointer;color:var(--accent);font-size:15px;font-weight:500;list-style:none}
-summary::-webkit-details-marker{display:none}
-summary::after{content:" ↓"}
-details[open] summary::after{content:" ↑"}
-details[open] summary{margin-bottom:16px}
-
 .contact ul{list-style:none;padding:0;margin:20px 0 0;display:flex;flex-wrap:wrap;gap:10px}
 .contact a{display:inline-block;text-decoration:none;border:1px solid var(--line);background:var(--surface);
   padding:10px 16px;border-radius:999px;font-size:15px}
 .contact a:hover{border-color:var(--accent);color:var(--accent)}
-footer{padding:32px 0 56px;font-size:13px;color:var(--faint);border-top:1px solid var(--line)}
+
+.pager{display:flex;justify-content:space-between;gap:12px;padding:32px 0;border-top:1px solid var(--line)}
+.pager a{text-decoration:none;font-size:15px;color:var(--muted)}
+.pager a:hover{color:var(--accent)}
+.pager b{display:block;color:var(--text);font-size:17px}
+.pager .next{text-align:right;margin-left:auto}
+footer{padding:28px 0 56px;font-size:13px;color:var(--faint);border-top:1px solid var(--line)}
 
 @media (max-width:640px){
-  header{padding:40px 0 28px}
+  .bar .wrap{gap:8px}
+  .brand{display:none}
+  .tabs{margin-left:-6px}
+  .page-head{padding:36px 0 24px}
+  .page-head h1{font-size:28px}
   .hero{gap:18px}
   .hero img{width:84px;height:84px}
-  h1{font-size:28px}
-  h1 small{display:block;margin:2px 0 0}
+  .hero h1 small{display:block;margin:2px 0 0}
   .stats{grid-template-columns:1fr 1fr}
-  .cards{grid-template-columns:1fr}
+  .cats,.cards{grid-template-columns:1fr}
   .rows li{grid-template-columns:1fr;gap:2px}
-  section{padding:40px 0}
 }
-@media print{nav{display:none} section{break-inside:avoid-page} details > *{display:block}}
+@media print{.bar,.pager{display:none}}
 </style>
 </head>
 <body>
-<nav aria-label="섹션"><div class="wrap" id="nav"></div></nav>
+<header class="bar"><div class="wrap">
+  <a class="brand" href="#home">박동영</a>
+  <nav class="tabs" id="tabs" aria-label="카테고리"></nav>
+</div></header>
 
-<div class="wrap">
-  <header id="top">
-    <div class="hero">
-      <img src="assets/profile.jpg" alt="박동영 프로필 사진">
-      <div>
-        <h1 id="name"></h1>
-        <p class="title" id="title"></p>
-      </div>
-    </div>
-    <p class="intro" id="intro"></p>
-    <p class="updated" id="updated"></p>
-    <div class="stats" id="stats"></div>
-  </header>
-
-  <section id="career">
-    <h2>경력</h2>
-    <p class="lead">현재 맡고 있는 역할과 지나온 소속을 최신순으로 정리했습니다.</p>
-    <div id="current"></div>
-    <details>
-      <summary>이전 경력 <span id="pastCount"></span>개 모두 보기</summary>
-      <div id="past"></div>
-    </details>
-  </section>
-
-  <section id="education">
-    <h2>학력</h2>
-    <p class="lead" id="military"></p>
-    <div id="edu"></div>
-  </section>
-
-  <section id="directing">
-    <h2>기획 · 연출 · 안무</h2>
-    <p class="lead">국내외 태권도 시범공연과 공연예술 무대를 기획하고 연출했습니다.</p>
-    <ul class="rows" id="dir"></ul>
-  </section>
-
-  <section id="grants">
-    <h2>정부지원 사업</h2>
-    <p class="lead">수행한 정부·공공기관 지원 사업입니다. 금액 단위: 천원</p>
-    <div class="cards" id="grantList"></div>
-  </section>
-
-  <section id="research">
-    <h2>논문 · 저서</h2>
-    <p class="lead">태권도 시범 공연과 지도자, 도장 경영에 관한 연구입니다.</p>
-    <ul class="rows" id="papers"></ul>
-  </section>
-
-  <section id="media">
-    <h2>영상 · 방송</h2>
-    <p class="lead">기획·제작한 영상 콘텐츠와 출연한 방송입니다.</p>
-    <div class="cards" id="mediaList"></div>
-    <h3 style="margin:32px 0 8px;font-size:17px">방송 출연</h3>
-    <ul class="rows" id="broadcast"></ul>
-  </section>
-
-  <section id="judging">
-    <h2>심사 · 위원 활동</h2>
-    <ul class="rows" id="judge"></ul>
-  </section>
-
-  <section id="awards">
-    <h2>수상 · 표창</h2>
-    <p class="lead">시범·품새·격파 대회 수상과 기관 표창입니다.</p>
-    <ul class="rows" id="awardList"></ul>
-    <details>
-      <summary>표창 <span id="honorCount"></span>건 보기</summary>
-      <ul class="rows" id="honors"></ul>
-    </details>
-  </section>
-
-  <section id="licenses">
-    <h2>자격 · 단증</h2>
-    <div class="cards" id="licList"></div>
-  </section>
-
-  <section id="contact" class="contact">
-    <h2>함께 이야기 나눠요</h2>
-    <p class="lead" style="margin:0">공연 연출, 시범단 지도, 강연과 교육 협업 제안을 환영합니다.</p>
-    <ul id="contactList"></ul>
-  </section>
-</div>
+<main class="wrap" id="app"></main>
 
 <footer><div class="wrap">© <span id="year"></span> 박동영 · Park, Dong-Young</div></footer>
 
@@ -204,53 +139,110 @@ footer{padding:32px 0 56px;font-size:13px;color:var(--faint);border-top:1px soli
   const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
   const P = window.PROFILE;
 
-  $("name").innerHTML = esc(P.name) + "<small>" + esc(P.nameEn) + "</small>";
-  $("title").textContent = P.title;
-  $("intro").textContent = P.intro;
-  $("updated").textContent = "업데이트 " + P.updated;
-  $("stats").innerHTML = P.highlights.map(h => `<div class="stat"><b>${esc(h.num)}</b><span>${esc(h.label)}</span></div>`).join("");
-  $("year").textContent = new Date().getFullYear();
-
+  /* ---------- 블록 렌더러 ---------- */
   const entry = (e, now) => `<div class="entry${now ? " now" : ""}">
       <div class="period">${esc(e.period)}</div>
       <h3>${esc(e.org)}</h3>
       ${e.role ? `<p class="role">${esc(e.role)}</p>` : ""}
       ${e.desc ? `<p class="desc">${esc(e.desc)}</p>` : ""}
     </div>`;
-  $("current").innerHTML = CURRENT.map(e => entry(e, true)).join("");
-  $("past").innerHTML = PAST.map(e => entry(e)).join("");
-  $("pastCount").textContent = PAST.length;
-  $("edu").innerHTML = EDUCATION.map(e => entry(e)).join("");
-  $("military").textContent = "병역 · " + MILITARY;
-
   const row = (d, t, s, badge) => `<li><span class="d">${esc(d)}</span><span class="t">${badge || ""}${esc(t)}${s ? `<span class="s">${esc(s)}</span>` : ""}</span></li>`;
-  $("dir").innerHTML = DIRECTING.map(([d, t]) => row(d || "—", t)).join("");
-  $("papers").innerHTML = PAPERS.map(p => row(p.date, p.title, p.where, `<span class="badge">${esc(p.type)}</span>`)).join("");
-  $("broadcast").innerHTML = BROADCAST.map(([d, t, s]) => row(d, t, s)).join("");
-  $("judge").innerHTML = JUDGING.map(([d, t]) => row(d, t)).join("");
-  $("awardList").innerHTML = AWARDS.map(([d, r, t, s]) =>
-    row(d, t, s, `<span class="badge${/1위|우승|금상/.test(r) ? " gold" : ""}">${esc(r)}</span>`)).join("");
-  $("honors").innerHTML = HONORS.map(([d, t, s]) => row(d, t, s)).join("");
-  $("honorCount").textContent = HONORS.length;
-
   const card = (t, s, d, extra) => `<div class="card"><div class="t">${esc(t)}</div>${s ? `<div class="s">${esc(s)}</div>` : ""}${d ? `<div class="d">${esc(d)}</div>` : ""}${extra || ""}</div>`;
-  $("grantList").innerHTML = GRANTS.map(([t, s, d, a]) => card(t, s, d, `<div class="amt">${esc(a)}천원</div>`)).join("");
-  $("mediaList").innerHTML = MEDIA.map(([y, t, r, s]) => card(t, s, y + " · " + r)).join("");
-  $("licList").innerHTML = LICENSES.map(([t, s, d]) => card(t, s, d)).join("");
+  const badge = (txt, gold) => `<span class="badge${gold ? " gold" : ""}">${esc(txt)}</span>`;
+  const section = (title, items, lead, body) =>
+    `<section><h2>${esc(title)}<span class="count">${items.length}</span></h2>${lead ? `<p class="lead">${esc(lead)}</p>` : ""}${body}</section>`;
 
-  $("contactList").innerHTML = [
-    P.email && `<li><a href="mailto:${esc(P.email)}">✉ ${esc(P.email)}</a></li>`,
-    `<li><a href="#" onclick="window.print();return false">이력서 인쇄 / PDF 저장</a></li>`,
-  ].filter(Boolean).join("");
+  const S = {
+    current: () => section("현재", CURRENT, "지금 맡고 있는 역할입니다.", CURRENT.map(e => entry(e, true)).join("")),
+    past: () => section("이전 경력", PAST, "", PAST.map(e => entry(e)).join("")),
+    edu: () => section("학력", EDUCATION, "병역 · " + MILITARY, EDUCATION.map(e => entry(e)).join("")),
+    directing: () => section("기획 · 연출 · 안무", DIRECTING, "국내외 태권도 시범공연과 공연예술 무대를 기획하고 연출했습니다.",
+      `<ul class="rows">${DIRECTING.map(([d, t]) => row(d || "—", t)).join("")}</ul>`),
+    media: () => section("영상물 제작", MEDIA, "기획·제작한 영상 콘텐츠와 앱입니다.",
+      `<div class="cards">${MEDIA.map(([y, t, r, s]) => card(t, s, y + " · " + r)).join("")}</div>`),
+    broadcast: () => section("방송 · 광고 출연", BROADCAST, "",
+      `<ul class="rows">${BROADCAST.map(([d, t, s]) => row(d, t, s)).join("")}</ul>`),
+    papers: () => section("논문 · 저서", PAPERS, "태권도 시범 공연과 지도자, 도장 경영에 관한 연구입니다.",
+      `<ul class="rows">${PAPERS.map(p => row(p.date, p.title, p.where, badge(p.type))).join("")}</ul>`),
+    grants: () => section("정부지원 사업", GRANTS, "수행한 정부·공공기관 지원 사업입니다. 금액 단위: 천원",
+      `<div class="cards">${GRANTS.map(([t, s, d, a]) => card(t, s, d, `<div class="amt">${esc(a)}천원</div>`)).join("")}</div>`),
+    awards: () => section("수상", AWARDS, "시범·품새·격파 대회 수상 기록입니다.",
+      `<ul class="rows">${AWARDS.map(([d, r, t, s]) => row(d, t, s, badge(r, /1위|우승|금상/.test(r)))).join("")}</ul>`),
+    honors: () => section("표창", HONORS, "",
+      `<ul class="rows">${HONORS.map(([d, t, s]) => row(d, t, s)).join("")}</ul>`),
+    licenses: () => section("자격 · 단증", LICENSES, "",
+      `<div class="cards">${LICENSES.map(([t, s, d]) => card(t, s, d)).join("")}</div>`),
+    judging: () => section("심사 · 위원 활동", JUDGING, "",
+      `<ul class="rows">${JUDGING.map(([d, t]) => row(d, t)).join("")}</ul>`),
+  };
 
-  // nav
-  const secs = [...document.querySelectorAll("section[id]")];
-  $("nav").innerHTML = secs.map(s => `<a href="#${s.id}">${esc(s.querySelector("h2").textContent.replace("함께 이야기 나눠요", "연락처"))}</a>`).join("");
-  const links = [...$("nav").querySelectorAll("a")];
-  const io = new IntersectionObserver(es => es.forEach(e => {
-    if (e.isIntersecting) links.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + e.target.id));
-  }), { rootMargin: "-40% 0px -55% 0px" });
-  secs.forEach(s => io.observe(s));
+  /* ---------- 카테고리 정의 (순서 = 메뉴 순서) ---------- */
+  const CATS = [
+    { id: "career", name: "경력", desc: "대학 교수, 시범단 감독, 협회 활동 등 소속과 역할",
+      lead: "각 소속에서 맡은 역할과 기간을 최신순으로 정리했습니다.",
+      blocks: ["current", "past", "edu"], count: () => CURRENT.length + PAST.length },
+    { id: "stage", name: "공연·연출", desc: "시범공연 기획·연출, 영상 제작, 방송 출연",
+      lead: "70여 개국 시범공연부터 뮤지컬·페스티벌 연출, 영상 콘텐츠까지.",
+      blocks: ["directing", "media", "broadcast"], count: () => DIRECTING.length + MEDIA.length + BROADCAST.length },
+    { id: "research", name: "연구", desc: "학위논문, 학술지 논문, 저서, 정부지원 사업",
+      lead: "태권도 시범과 지도자 교육에 관한 연구와 지원 사업 수행 이력입니다.",
+      blocks: ["papers", "grants"], count: () => PAPERS.length + GRANTS.length },
+    { id: "awards", name: "수상·자격", desc: "대회 수상, 기관 표창, 자격증과 단증",
+      lead: "대회 수상과 표창, 보유 자격을 정리했습니다.",
+      blocks: ["awards", "honors", "licenses"], count: () => AWARDS.length + HONORS.length + LICENSES.length },
+    { id: "committee", name: "심사·위원", desc: "대회 심사, 선발위원, 위원회 활동",
+      lead: "대회 심사와 선발, 위원회 활동 이력입니다.",
+      blocks: ["judging"], count: () => JUDGING.length },
+  ];
+
+  const contact = () => `<section class="contact"><h2>함께 이야기 나눠요</h2>
+    <p class="lead" style="margin:0">공연 연출, 시범단 지도, 강연과 교육 협업 제안을 환영합니다.</p>
+    <ul>${P.email ? `<li><a href="mailto:${esc(P.email)}">✉ ${esc(P.email)}</a></li>` : ""}
+    <li><a href="#" onclick="window.print();return false">이 페이지 인쇄 / PDF 저장</a></li></ul></section>`;
+
+  /* ---------- 페이지 ---------- */
+  function home() {
+    return `<div class="page-head">
+        <div class="hero">
+          <img src="assets/profile.jpg" alt="박동영 프로필 사진">
+          <div><h1>${esc(P.name)}<small>${esc(P.nameEn)}</small></h1><p class="title">${esc(P.title)}</p></div>
+        </div>
+        <p class="intro">${esc(P.intro)}</p>
+        <p class="updated">업데이트 ${esc(P.updated)}</p>
+        <div class="stats">${P.highlights.map(h => `<div class="stat"><b>${esc(h.num)}</b><span>${esc(h.label)}</span></div>`).join("")}</div>
+      </div>
+      <section><h2>카테고리</h2><p class="lead">보고 싶은 이력을 골라 주세요.</p>
+        <div class="cats">${CATS.map(c => `<a class="cat" href="#${c.id}">
+          <span class="n">${c.count()}건</span><h3>${esc(c.name)}</h3><p>${esc(c.desc)}</p><span class="go">자세히 보기 →</span></a>`).join("")}</div>
+      </section>${contact()}`;
+  }
+  function category(c) {
+    const i = CATS.indexOf(c), prev = CATS[i - 1], next = CATS[i + 1];
+    return `<div class="page-head"><h1>${esc(c.name)}</h1><p>${esc(c.lead)}</p></div>
+      ${c.blocks.map(b => S[b]()).join("")}
+      <nav class="pager">
+        ${prev ? `<a href="#${prev.id}">← 이전<b>${esc(prev.name)}</b></a>` : `<a href="#home">← 처음<b>소개</b></a>`}
+        ${next ? `<a class="next" href="#${next.id}">다음 →<b>${esc(next.name)}</b></a>` : ""}
+      </nav>`;
+  }
+
+  $("tabs").innerHTML = `<a href="#home" data-id="home">소개</a>` + CATS.map(c => `<a href="#${c.id}" data-id="${c.id}">${esc(c.name)}</a>`).join("");
+  $("year").textContent = new Date().getFullYear();
+
+  function route() {
+    const id = location.hash.slice(1) || "home";
+    const c = CATS.find(x => x.id === id);
+    $("app").innerHTML = c ? category(c) : home();
+    document.title = (c ? c.name + " | " : "") + "박동영 이력";
+    document.querySelectorAll("#tabs a").forEach(a => {
+      const on = a.dataset.id === (c ? c.id : "home");
+      a.classList.toggle("active", on);
+      if (on) a.scrollIntoView({ block: "nearest", inline: "nearest" });
+    });
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener("hashchange", route);
+  route();
 })();
 </script>
 </body>
